@@ -1,0 +1,115 @@
+.liveticker {
+	margin-bottom: 50px;
+}
+
+.liveticker .wpb_column h2 {
+	margin-bottom: 5px;
+	font-size: 25px;
+	text-transform: none;
+	font-weight: 400;
+}
+
+.liveticker .heimmannschaft {
+	text-align: center;
+}
+
+.liveticker .gastmannschaft {
+	text-align: center;
+}
+
+.liveticker .score {
+	font-size: 40px;
+	color: #2b2b2b;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.liveticker .halbzeitScore {
+	color: #9c9c9c;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+
+@media (min-width: 768px) {
+	.liveticker .heimmannschaft {
+		text-align: right;
+	}
+
+	.liveticker .gastmannschaft {
+		text-align: left;
+	}
+
+	.liveticker .score {
+		margin: 0;
+	}
+}
+
+.liveticker .mk-divider {
+	padding: 20px 0 20px;
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.liveticker .mk-divider .divider-inner {
+	border-top-width: 1px;
+	width: 100px;
+	margin: 0 auto;
+	position: relative;
+	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.collapseomatic {
+    padding: 0 0 10px 0px;
+    background-position: center bottom;
+}
+
+.collapseomatic_content {
+	clear: both;
+	overflow: auto;
+	padding-top: 15px;
+	margin: 0;
+}
+
+.collapseomatic_content span {
+	text-align: center;
+	font-size: 18px;
+	display: block;
+	padding-top: 40px;
+}
+
+.colomat-hover {
+    text-decoration: none;
+}
+
+.collapseomatic_content .date_time {
+	background: url("http://www.tv-gundelfingen.de/handball/wordpress/wp-content/plugins/tvg-handball-liveticker/images/clock.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 35px;
+}
+
+.collapseomatic_content .location {
+	background: url("http://www.tv-gundelfingen.de/handball/wordpress/wp-content/plugins/tvg-handball-liveticker/images/stadium.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 35px;
+}
+
+.collapseomatic_content .referee {
+	background: url("http://www.tv-gundelfingen.de/handball/wordpress/wp-content/plugins/tvg-handball-liveticker/images/referee.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 35px;
+}
+
+@media (max-width: 768px) {
+	.collapseomatic_content .referee, .collapseomatic_content .location {
+		margin-top: 10px;
+	}
+
+}
