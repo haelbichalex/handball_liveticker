@@ -21,7 +21,7 @@ function tvg_meta_callback( $post ) {
 
 	<div>
 		<div class="meta-row">
-			
+
 			<div class="meta-th">
 				<label for="heimmannschaft" class="dwwp-row-title"><?php _e( 'Heimmannschaft', 'tvg-liveticker' ); ?></label>
 			</div>
@@ -34,6 +34,13 @@ function tvg_meta_callback( $post ) {
 			</div>
 			<div class="meta-td">
 				<input type="text" class="dwwp-row-content" name="gastmannschaft" id="gastmannschaft" value="<?php if ( ! empty ( $tvg_stored_meta['gastmannschaft'] ) ) echo esc_attr( $tvg_stored_meta['gastmannschaft'][0] ); ?>"/>
+			</div>
+
+			<div class="meta-th">
+				<label for="zeit" class="dwwp-row-title"><?php _e( 'Aktuelle Minute', 'tvg-liveticker' ); ?></label>
+			</div>
+			<div class="meta-td">
+				<input type="text" class="dwwp-row-content lt_spinner" name="zeit" id="zeit" value="<?php if ( ! empty ( $tvg_stored_meta['zeit'] ) ) echo esc_attr( $tvg_stored_meta['zeit'][0] ); ?>"/>
 			</div>
 
 			<div class="meta-th">
@@ -86,7 +93,7 @@ function tvg_meta_callback( $post ) {
 			</div>
 
 		</div>
-	</div>	
+	</div>
 	<?php
 }
 
@@ -105,6 +112,9 @@ function tvg_meta_save( $post_id ) {
     }
     if ( isset( $_POST[ 'gastmannschaft' ] ) ) {
     	update_post_meta( $post_id, 'gastmannschaft', sanitize_text_field( $_POST[ 'gastmannschaft' ] ) );
+    }
+	if ( isset( $_POST[ 'zeit' ] ) ) {
+    	update_post_meta( $post_id, 'zeit', sanitize_text_field( $_POST[ 'zeit' ] ) );
     }
     if ( isset( $_POST[ 'heimTore' ] ) ) {
     	update_post_meta( $post_id, 'heimTore', sanitize_text_field( $_POST[ 'heimTore' ] ) );
@@ -130,9 +140,3 @@ function tvg_meta_save( $post_id ) {
 
 }
 add_action( 'save_post', 'tvg_meta_save' );
-
-
-
-
-
-

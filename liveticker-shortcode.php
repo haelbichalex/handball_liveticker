@@ -32,7 +32,7 @@ function dwwp_list_job_by_location ($atts, $content = null) {
 
 	$jobs_by_location = new WP_Query ($args);
 
-	if($jobs_by_location->have_posts() ) : 
+	if($jobs_by_location->have_posts() ) :
 		$location = str_replace( '-', ' ', $atts['location']);
 		$display_by_location = '<div id="jobs-by-location"';
 		$display_by_location .= '<h4>' . esc_html__( $atts[ 'title' ] ) . '&nbsp' . esc_html__( ucwords( $location ) ) . '</h4>';
@@ -69,7 +69,7 @@ function tvg_list_all_liveticker ($atts, $content = null) {
 			'title' => 'Standard Titel',
 		), $atts);
 
-	
+
 	$args = array (
 		'post_type' => 'liveticker',
 		'post_status' => 'publish'
@@ -86,8 +86,9 @@ function tvg_list_all_liveticker ($atts, $content = null) {
 			global $post;
 			$heimmannschaft = get_post_meta(get_the_ID(), 'heimmannschaft', true);
 			$gastmannschaft = get_post_meta(get_the_ID(), 'gastmannschaft', true);
+            $zeit = get_post_meta(get_the_ID(), 'zeit', true);
 			$heimTore = get_post_meta(get_the_ID(), 'heimTore', true);
-			$gastTore = get_post_meta(get_the_ID(), 'gastTore', true);	
+			$gastTore = get_post_meta(get_the_ID(), 'gastTore', true);
 			$heimToreHalbzeit = get_post_meta(get_the_ID(), 'heimToreHalbzeit', true);
 			$gastToreHalbzeit = get_post_meta(get_the_ID(), 'gastToreHalbzeit', true);
 			$date_time = get_post_meta(get_the_ID(), 'date_time', true);
@@ -96,7 +97,7 @@ function tvg_list_all_liveticker ($atts, $content = null) {
 
 			$displaylist .= '<div class="liveticker collapseomatic" id="collapseme' . $countTickers .'">';
 			$displaylist .= '<div class="vc_col-sm-4 wpb_column column_container _ height-full"><h2 class="heimmannschaft">' . esc_html($heimmannschaft) . '</h2></div>';
-			$displaylist .= '<div class="vc_col-sm-4 wpb_column column_container _ height-full"><div class="score"><span class="heimScore">' . esc_html($heimTore) . '</span>:<span class="gastScore">' . esc_html($gastTore) . '</span></div>';
+			$displaylist .= '<div class="vc_col-sm-4 wpb_column column_container _ height-full"><div class="zeit">' . esc_html($zeit) . '. Min</div><div class="score"><span class="heimScore">' . esc_html($heimTore) . '</span>:<span class="gastScore">' . esc_html($gastTore) . '</span></div>';
 			$displaylist .= '<div class="halbzeitScore">(' . esc_html($heimToreHalbzeit) . ':' . esc_html($gastToreHalbzeit) . ')</div></div>';
 			$displaylist .= '<div class="vc_col-sm-4 wpb_column column_container _ height-full"><h2 class="gastmannschaft">' . esc_html($gastmannschaft) . '</h2></div>';
 			$displaylist .= '<div id="target-collapseme' . $countTickers . '" class="collapseomatic_content">';

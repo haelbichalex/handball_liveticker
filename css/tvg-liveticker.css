@@ -1,5 +1,13 @@
 .liveticker {
 	margin-bottom: 50px;
+	display: inline-block;
+    white-space: nowrap;
+	width: 100%;
+}
+
+/* valign */
+.liveticker .wpb_column {
+	float: none;
 }
 
 .liveticker .wpb_column h2 {
@@ -7,6 +15,7 @@
 	font-size: 25px;
 	text-transform: none;
 	font-weight: 400;
+	color: #9d0d17;
 }
 
 .liveticker .heimmannschaft {
@@ -32,7 +41,22 @@
 	font-size: 20px;
 }
 
+.liveticker .zeit {
+	text-align: center;
+	color: #9c9c9c;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
 @media (min-width: 768px) {
+
+	/* valign */
+	.liveticker .wpb_column {
+		display: inline-block;
+	    white-space: normal;
+	    vertical-align: middle;
+	}
+
 	.liveticker .heimmannschaft {
 		text-align: right;
 	}
